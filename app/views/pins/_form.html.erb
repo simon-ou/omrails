@@ -1,8 +1,13 @@
 <%= simple_form_for(@pin, html: {class: "form-horizontal"}) do |f| %>
-  <%= f.error_notification %>
+  	<%= f.error_notification %>
+  	<%= f.full_error :image_file_size, class: "alert alert-error" %>
+    <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
+  <div class="well" %>
+  	<%= f.input :image, label: "Select an image to upload" %>
     <%= f.input :description, as: :text, inut_html: {ros: 3} %>
-
+	</div>
+	
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary" %>
   </div>
