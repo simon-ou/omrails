@@ -1,5 +1,5 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<div class="well">
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
 
@@ -14,16 +14,17 @@
   <%= f.input :password_confirmation, label: "New Password Comfirmation", autocomplete: "off" %>
   <%= f.input :current_password %> (we need your current password to confirm your changes)<br/>
 
-
+</div>
 
   <div class="form-actions">
     <%= f.submit "Update", class: "btn btn-primary" %>
   </div>
 
 <% end %>
-
+<div class="well">
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+</div>
 
 <%= link_to "Back", :back %>
